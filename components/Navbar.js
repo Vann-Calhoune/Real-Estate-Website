@@ -1,13 +1,16 @@
 import React from 'react'
 import Link from 'next/link';
 import styled from 'styled-components'
+import styles from './Navbar.module.css';
 
 const NavList = styled.ul`
-list-style: none;
+  list-style: none;
     display: flex;
     justify-content: flex-end;
     gap: 10px;
     align-items: center;
+    text-decoration: none;
+    color: black;
 `
 
 const Header = styled.div`
@@ -18,28 +21,27 @@ const Header = styled.div`
 `
 
 
+
 function Navbar() {
   return (
   <Header>
-    <h1>Vann Buys Houses</h1>
+    <h3>Vann Buys Houses</h3>
     <NavList>
-      <li>
-        <Link href="/">
+      <li >
+        <Link className={styles.listItem} href="/">
         Home
         </Link>
         </li>
-      <li>
-        <Link href="/about">
-        About us
+      <li >
+        <Link className={styles.listItem} href="/about">
+        About
         </Link>
         </li>
-        <li>
-        <Link href="/partner">
-        Partner Program
+        <li >
+        <Link className={styles.listItem} href="/partner">
+        Partner
         </Link>
         </li>
-
-
     </NavList>
   </Header> )
   
