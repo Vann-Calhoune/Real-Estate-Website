@@ -7,6 +7,10 @@ import contact from "../public/contactUs.jpg"
 import inspect from "../public/inspect.jpg"
 import deal from "../public/deal.jpg"
 import styles from "../styles/index.module.css"
+import time from '../public/clock.png'
+import fee from '../public/no-fee.png'
+import problem from '../public/problem.png'
+import repair from '../public/repair.png'
 
 
 const FirstDiv = styled.div`
@@ -53,18 +57,32 @@ justify-content: center;
 height: 35vh;
 align-items: center;
 font-size: 18px;
+border: 1px solid grey;
+border-radius: 5px;
+background-color: 
 
 
 `
 const WhyHead = styled.h2`
 text-align: center;
 font-size: 30px;
+color: #38b6ff;
 `
 const WhyList = styled.ul`
 list-style: none;
 > li {
+  
+}
+> p {
   font-size: 18px;
-  font-style: bold;
+}
+> div {
+  display: flex;
+  align-items: center;
+  justify-content: ;
+  font-size: 25px;
+  font-weight: bold;
+  gap: 10px;
 }
 `
 const WhyContent = styled.div`
@@ -112,17 +130,17 @@ function index() {
           <HowContent>
             
             <Step>
-            <Image src={contact} alt="woman with phone and computer" width={200} height={200}/>
+            <Image src={contact} alt="woman with phone and computer" width={150} height={150}/>
             <p>Contact us and we will discuss your property. </p>
               
             </Step>
             <Step>
-            <Image src={inspect} alt="house" width={200} height={200}/>
+            <Image src={inspect} alt="house" width={150} height={150}/>
               <p>We set up a time to come and take a look at your home.</p>
               
             </Step>
             <Step >
-            <Image src={deal} alt="handshake" width={200} height={200}/>
+            <Image src={deal} alt="handshake" width={150} height={150}/>
             <p>We give you a no-obligation offer and can close in 1-3 weeks.</p>
               
             </Step>
@@ -131,14 +149,26 @@ function index() {
         <WhyContent>
           <WhyHead>Why you should choose us</WhyHead>
           <WhyList>
+            <div>
+            <Image src={time} alt='clock' height={50} width={50}/>
             <li>Fast closing times</li>
+            </div>
             <p>Typically within 1-3 weeks.</p>
+            <div>
+            <Image src={fee} alt='clock' height={50} width={50}/>
             <li>No closing costs</li>
+            </div>
             <p>No real estate commissions or agent fees.</p>
+            <div>
+            <Image src={repair} alt='clock' height={50} width={50}/>  
             <li>No repairs needed.</li>
+            </div>
             <p>We buy the property as-is</p>
+            <div>
+            <Image src={problem} alt='clock' height={50} width={50}/>
             <li>Problem solvers</li>
-            <p>Times are tough. Whatever your situation may be we are here to help.</p>
+            </div>
+            <p>Times are tough. Whatever your situation may be, we are here to help.</p>
           </WhyList>
         </WhyContent>
      

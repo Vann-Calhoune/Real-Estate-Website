@@ -5,18 +5,30 @@ import headShot from "../public/headShot.png"
 const Bio = styled.div`
 display: flex;
 justify-content: space-around;
-height: 75vh;
+height: 60vh;
 margin-top: 20px;
 padding: 20px;
 
 `
 const BioText = styled.div`
 width: 30vw;
+> h2 {
+  font-size: 45px;
+  color: #38b6ff
+}
+> p {
+  font-size: 20px;
+}
 
 `
 const Mission = styled.div`
 > h2 {
   text-align: center;
+  font-size: 45px;
+  color: #38b6ff;
+}
+> p {
+  font-size: 20px;
 }
 margin: 0 30px;
 `
@@ -25,6 +37,7 @@ display: grid;
 grid-template-columns: 1fr 1fr 1fr;
 list-style: none;
 gap: 8px;
+font-size: 20px;
 
 `
 
@@ -55,6 +68,7 @@ function about() {
           <li>Tax delinquent homes</li>
           <li>Tired landlord homes</li>
           <li>Need a lot of repairs homes</li>
+          <li>And many more!</li>
         </HouseGrid>
       </Mission>    
     </>

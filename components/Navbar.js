@@ -4,8 +4,6 @@ import styled from 'styled-components'
 import styles from './Navbar.module.css';
 import logo from '../public/logo.png'
 import Image from 'next/image';
-import Head from 'next/head';
-import { Rubik_80s_Fade } from '@next/font/google';
 
 const NavList = styled.ul`
   list-style: none;
@@ -14,7 +12,7 @@ const NavList = styled.ul`
     gap: 20px;
     align-items: center;
     text-decoration: none;
-    color: black;
+    margin-right: 30px;
 `
 
 const Header = styled.div`
@@ -22,16 +20,9 @@ const Header = styled.div`
  justify-content: space-between;
  padding: 5px;
  height: 8rem;
- > h3 {
-  font-size: 28px;
- }
  align-items: center;
-
- 
 `
-const unbound = Rubik_80s_Fade({
-  weight: '400'
-})
+
 
 
 
@@ -39,7 +30,7 @@ function Navbar() {
   return (
   <Header>
     <Image src={logo} alt="Vann buys houses log" height={180} width={180} />
-    <NavList className={unbound.className}>
+    <NavList >
       <li >
         <Link className={styles.listItem} href="/">
         Home
@@ -52,7 +43,7 @@ function Navbar() {
         </li>
         <li >
         <Link className={styles.listItem} href="/partner">
-        Partner
+        Refer
         </Link>
         </li>
     </NavList>
