@@ -5,6 +5,7 @@ display: flex;
 flex-direction: column;
 padding: 20px;
 margin: 10px;
+
 border-radius: 10px;
 // background-color: rgba(220, 220, 220, 0.7);
 font-family: roboto;
@@ -14,7 +15,7 @@ gap: 10px;
 `
 
 const FormHead = styled.h3`
-
+font-size: 25px;
 `
 
 const Finput = styled.input`
@@ -32,6 +33,9 @@ width: 30%;
 `
 const FTextArea = styled.textarea`
 border-radius: 3px;
+width: 75%;
+margin: 0 auto;
+height: 4vh;
 `
 
 function Form() {

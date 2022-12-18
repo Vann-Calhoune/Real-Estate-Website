@@ -17,6 +17,8 @@ const Process = styled.div`
 display: flex;
 justify-content: center;
 gap: 5px;
+border: 1px solid black;
+height: 60vh;
 
 `
 const Steps = styled.div`

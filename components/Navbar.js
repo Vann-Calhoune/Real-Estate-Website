@@ -2,12 +2,16 @@ import React from 'react'
 import Link from 'next/link';
 import styled from 'styled-components'
 import styles from './Navbar.module.css';
+import logo from '../public/logo.png'
+import Image from 'next/image';
+import Head from 'next/head';
+import { Rubik_80s_Fade } from '@next/font/google';
 
 const NavList = styled.ul`
   list-style: none;
     display: flex;
     justify-content: flex-end;
-    gap: 10px;
+    gap: 20px;
     align-items: center;
     text-decoration: none;
     color: black;
@@ -15,18 +19,27 @@ const NavList = styled.ul`
 
 const Header = styled.div`
  display: flex;
- justify-content: space-around;
- border: 1px solid black;
- padding: 10px;
+ justify-content: space-between;
+ padding: 5px;
+ height: 8rem;
+ > h3 {
+  font-size: 28px;
+ }
+ align-items: center;
+
+ 
 `
+const unbound = Rubik_80s_Fade({
+  weight: '400'
+})
 
 
 
 function Navbar() {
   return (
   <Header>
-    <h3>Vann Buys Houses</h3>
-    <NavList>
+    <Image src={logo} alt="Vann buys houses log" height={180} width={180} />
+    <NavList className={unbound.className}>
       <li >
         <Link className={styles.listItem} href="/">
         Home
