@@ -57,9 +57,7 @@ justify-content: center;
 height: 35vh;
 align-items: center;
 font-size: 18px;
-border: 1px solid grey;
-border-radius: 5px;
-background-color: 
+border-radius: 10px;
 
 
 `
