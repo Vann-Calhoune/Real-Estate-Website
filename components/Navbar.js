@@ -2,31 +2,35 @@ import React from 'react'
 import Link from 'next/link';
 import styled from 'styled-components'
 import styles from './Navbar.module.css';
+import logo from '../public/logo.png'
+import Image from 'next/image';
 
 const NavList = styled.ul`
   list-style: none;
     display: flex;
     justify-content: flex-end;
-    gap: 10px;
+    gap: 20px;
     align-items: center;
     text-decoration: none;
-    color: black;
+    margin-right: 30px;
 `
 
 const Header = styled.div`
  display: flex;
- justify-content: space-around;
- border: 1px solid black;
- padding: 10px;
+ justify-content: space-between;
+ padding: 5px;
+ height: 8rem;
+ align-items: center;
 `
+
 
 
 
 function Navbar() {
   return (
   <Header>
-    <h3>Vann Buys Houses</h3>
-    <NavList>
+    <Image src={logo} alt="Vann buys houses log" height={180} width={180} />
+    <NavList >
       <li >
         <Link className={styles.listItem} href="/">
         Home
@@ -39,7 +43,7 @@ function Navbar() {
         </li>
         <li >
         <Link className={styles.listItem} href="/partner">
-        Partner
+        Refer
         </Link>
         </li>
     </NavList>
