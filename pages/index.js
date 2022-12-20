@@ -13,6 +13,7 @@ import problem from '../public/problem.png'
 import repair from '../public/repair.png'
 
 
+
 const FirstDiv = styled.div`
 position: relative;
 width: 100vw;
@@ -22,6 +23,7 @@ height: 90vh;
 const P1 = styled.p`
 text-align: center;
 font-size: 35px;
+
 `
 const ContentDiv = styled.div`
 position: relative;
@@ -32,47 +34,51 @@ justify-content: space-around;
 color: white;
 `
 const SecDiv = styled.div`
-z-index: -1;
+// z-index: -1;
 `
 
 const HowContent = styled.div`
-height: 45vh;
-max-width: 100vw;
+// height: 100vh;
+// max-width: 100vw;
 display: flex;
-flex direction: row;
-gap: 5px;
+flex-direction: column;
+gap: 10px;
 margin: 5px;
 justify-content: center;
+
 `
 
 const imageStyle = {
-  opacity: .65
+  opacity: .8
 }
 
 const Step = styled.div`
 padding: 10px;
-display: flex;
-flex-direction: column;
-justify-content: center;
-height: 35vh;
+display: grid;
+grid-template-columns: 1fr 1fr;
+// height: 25vh;
+// width: 250px;
 align-items: center;
+justify-content: center;
 font-size: 18px;
-border-radius: 10px;
+border-radius: 20px;
+// background-color: #38b6ff;
+background-color: #ffffff20;
+margin: 0 20px;
+box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
 
 `
-const WhyHead = styled.h2`
+const WhyHead = styled.h1`
 text-align: center;
-font-size: 30px;
-color: #38b6ff;
+font-size: 36px;
+color: #004aad;
 `
 const WhyList = styled.ul`
 list-style: none;
-> li {
-  
-}
 > p {
-  font-size: 18px;
+  font-size: 28px;
+  
 }
 > div {
   display: flex;
@@ -81,22 +87,28 @@ list-style: none;
   font-size: 25px;
   font-weight: bold;
   gap: 10px;
+  
+  
 }
 `
 const WhyContent = styled.div`
-border: 1px solid black;
 margin: 0 30px;
 border-radius: 10px;
 
 `
 
 const HowWrapper = styled.div`
-border: 1px solid black;
 margin: 20px 30px;
 padding: 10px; 
 border-radius: 10px;
-`
 
+`
+const WhyWrapper = styled.div`
+display: flex;
+`
+const picStyle = {
+  borderRadius: '20px'
+};
 
 
 
@@ -124,50 +136,52 @@ function index() {
         </ContentDiv>
       </FirstDiv>
         <HowWrapper>
-          <h2 className={styles.how}>How it works</h2>
+          <h1 className={styles.how}>How it works</h1>
           <HowContent>
-            
             <Step>
-            <Image src={contact} alt="woman with phone and computer" width={150} height={150}/>
-            <p>Contact us and we will discuss your property. </p>
-              
+              <Image src={contact} alt="woman with phone and computer" width={150} height={150} style={picStyle}/>
+              <p>Contact us or submit a contact form and we will discuss your property. </p>
             </Step>
             <Step>
-            <Image src={inspect} alt="house" width={150} height={150}/>
-              <p>We set up a time to come and take a look at your home.</p>
-              
+              <Image src={inspect} alt="house" width={150} height={150} style={picStyle}/>
+                <p>We set up a time to come and take a look at your home.</p>
             </Step>
             <Step >
-            <Image src={deal} alt="handshake" width={150} height={150}/>
-            <p>We give you a no-obligation offer and can close in 1-3 weeks.</p>
-              
+              <Image src={deal} alt="handshake" width={150} height={150} style={picStyle}/>
+              <p>We give you a no-obligation offer and can close in 1-3 weeks.</p>
             </Step>
           </HowContent>
         </HowWrapper>
         <WhyContent>
           <WhyHead>Why you should choose us</WhyHead>
-          <WhyList>
-            <div>
-            <Image src={time} alt='clock' height={50} width={50}/>
-            <li>Fast closing times</li>
-            </div>
-            <p>Typically within 1-3 weeks.</p>
-            <div>
-            <Image src={fee} alt='clock' height={50} width={50}/>
-            <li>No closing costs</li>
-            </div>
-            <p>No real estate commissions or agent fees.</p>
-            <div>
-            <Image src={repair} alt='clock' height={50} width={50}/>  
-            <li>No repairs needed.</li>
-            </div>
-            <p>We buy the property as-is</p>
-            <div>
-            <Image src={problem} alt='clock' height={50} width={50}/>
-            <li>Problem solvers</li>
-            </div>
-            <p>Times are tough. Whatever your situation may be, we are here to help.</p>
-          </WhyList>
+          <WhyWrapper>
+            <WhyList>
+              <div>
+              <Image src={time} alt='clock' height={50} width={50}/>
+              <li>Fast closing times</li>
+              </div>
+              <p>Typically within 1-3 weeks.</p>
+              <div>
+              <Image src={fee} alt='clock' height={50} width={50}/>
+              <li>No closing costs</li>
+              </div>
+              <p>No real estate commissions or agent fees.</p>
+              <div>
+              <Image src={repair} alt='clock' height={50} width={50}/>  
+              <li>No repairs needed.</li>
+              </div>
+              <p>We buy the property as-is</p>
+              <div>
+              <Image src={problem} alt='clock' height={50} width={50}/>
+              <li>Problem solvers</li>
+              </div>
+              <p>Times are tough. Whatever your situation may be, we are here to help.</p>
+            </WhyList>
+            {/* <Image
+            src={logo}
+            alt="vann buys houses logo" 
+            height={200}/> */}
+          </WhyWrapper>
         </WhyContent>
      
    
