@@ -17,10 +17,13 @@ const NavList = styled.ul`
 
 const Header = styled.div`
  display: flex;
+ flex-direction: row;
  justify-content: space-between;
  padding: 5px;
- height: 8rem;
+ height: 9rem;
  align-items: center;
+ box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
 `
 
 
@@ -29,7 +32,7 @@ const Header = styled.div`
 function Navbar() {
   return (
   <Header>
-    <Image src={logo} alt="Vann buys houses log" height={180} width={180} />
+    <Image src={logo} alt="Vann buys houses log" height={150} width={150} />
     <NavList >
       <li >
         <Link className={styles.listItem} href="/">

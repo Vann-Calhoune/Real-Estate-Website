@@ -6,9 +6,16 @@ import sold from '../public/sold.jpg'
 
 const Heading = styled.div`
 text-align: center;
+> h1 {
+  color: #004aad;
+  
+}
 > p {
   font-size: 20px;
+  
 }
+margin-top: 90px;
+// border: 1px solid black;
 `
 
 const Offer = styled.div`
@@ -21,21 +28,37 @@ const Offer = styled.div`
 `
 const Process = styled.div`
 display: flex;
+flex-direction: column;
 justify-content: center;
-gap: 5px;
+align-items:center;
+gap: 30px;
 // border: 1px solid black;
-height: 60vh;
+height: 80vh;
+
 `
 const Steps = styled.div`
 display: flex;
-flex-direction: column;
+flex-direction: row;
 // border: 1px solid black;
-justify-content: center;
+justify-content: space-around;
 text-align: center;
 align-items: center;
-width: 35vw;
+width: 75vw;
+height: 45vh;
+border-radius: 10px;
+// background-color: #38B6FF;
+margin: 0 10px;
+box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+> p {
+  font-size: 18px;
+}
+
 
 `
+
+const picStyle = {
+ borderRadius: '10px'
+};
 
 function partner() {
   return (
@@ -48,19 +71,20 @@ function partner() {
       <Offer>
         <Process>
           <Steps>
-            <Image src={sale} alt="for sale sign" width={150} height={150}/>
+            <Image src={sale} alt="for sale sign" width={150} height={150} style={picStyle}/>
             <p>
               Refer someone looking to sell their house.
             </p>
           </Steps>
           <Steps>
-            <Image src={sold} alt="for sale sign" width={150} height={150}/>
-            <p>
+          <p>
               We purchase the property.
             </p>
+            <Image src={sold} alt="for sale sign" width={150} height={150} style={picStyle}/>
+           
           </Steps>
           <Steps>
-            <Image src={money} alt="for sale sign" width={150} height={150}/>
+            <Image src={money} alt="for sale sign" width={150} height={150} style={picStyle}/>
             <p>
               You get paid up to $1000 after closing!
             </p>
