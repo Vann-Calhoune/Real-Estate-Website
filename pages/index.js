@@ -17,12 +17,13 @@ import repair from '../public/repair.png'
 const FirstDiv = styled.div`
 position: relative;
 width: 100vw;
-height: 90vh;
+height: 105vh;
 `
 
 const P1 = styled.p`
 text-align: center;
-font-size: 35px;
+font-size: 30px;
+margin: 10px 15px;
 
 `
 const ContentDiv = styled.div`
@@ -54,13 +55,12 @@ const imageStyle = {
 
 const Step = styled.div`
 padding: 10px;
-display: grid;
-grid-template-columns: 1fr 1fr;
-// height: 25vh;
-// width: 250px;
+display: flex;
+flex-direction: column;
 align-items: center;
 justify-content: center;
-font-size: 18px;
+font-size: 20px;
+text-align: center;
 border-radius: 20px;
 // background-color: #38b6ff;
 background-color: #ffffff20;
@@ -75,24 +75,32 @@ font-size: 36px;
 color: #004aad;
 `
 const WhyList = styled.ul`
+display: flex;
+flex-direction: column;
 list-style: none;
+// border: 1px solid black;
+align-content: flex-start;
+justify-content: flex-start;
+margin: 0 10px;
+
 > p {
-  font-size: 28px;
+  font-size: 22px;
+  // border: 1px solid black;
   
 }
 > div {
   display: flex;
   align-items: center;
-  justify-content: ;
   font-size: 25px;
   font-weight: bold;
   gap: 10px;
-  
-  
+  // border: 1px solid black;
+  margin-left: 0;
+   
 }
 `
 const WhyContent = styled.div`
-margin: 0 30px;
+margin: 10px 10px;
 border-radius: 10px;
 
 `
@@ -107,7 +115,7 @@ const WhyWrapper = styled.div`
 display: flex;
 `
 const picStyle = {
-  borderRadius: '20px'
+  borderRadius: ' 20px 20px 0 0'
 };
 
 
@@ -157,30 +165,26 @@ function index() {
           <WhyWrapper>
             <WhyList>
               <div>
-              <Image src={time} alt='clock' height={50} width={50}/>
-              <li>Fast closing times</li>
+                <Image src={time} alt='clock' height={50} width={50}/>
+                <li>Fast closing times</li>
               </div>
               <p>Typically within 1-3 weeks.</p>
               <div>
-              <Image src={fee} alt='clock' height={50} width={50}/>
-              <li>No closing costs</li>
+                <Image src={fee} alt='clock' height={50} width={50}/>
+                <li>No closing costs</li>
               </div>
               <p>No real estate commissions or agent fees.</p>
               <div>
-              <Image src={repair} alt='clock' height={50} width={50}/>  
-              <li>No repairs needed.</li>
+                <Image src={repair} alt='clock' height={50} width={50}/>  
+                <li>No repairs needed.</li>
               </div>
-              <p>We buy the property as-is</p>
+              <p>We buy the property as-is.</p>
               <div>
-              <Image src={problem} alt='clock' height={50} width={50}/>
-              <li>Problem solvers</li>
+                <Image src={problem} alt='clock' height={50} width={50}/>
+                <li>Problem solvers</li>
               </div>
-              <p>Times are tough. Whatever your situation may be, we are here to help.</p>
+              <p>We specialize in real estate solutions. Whatever your situation may be, we are here to help.</p>
             </WhyList>
-            {/* <Image
-            src={logo}
-            alt="vann buys houses logo" 
-            height={200}/> */}
           </WhyWrapper>
         </WhyContent>
      

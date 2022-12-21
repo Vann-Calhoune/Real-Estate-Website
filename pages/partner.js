@@ -14,11 +14,13 @@ text-align: center;
   font-size: 20px;
   
 }
-margin-top: 90px;
+margin: 20px;
+margin-top: 50px;
 // border: 1px solid black;
 `
 
 const Offer = styled.div`
+margin: 20px;
 > p {
   text-align: center;
 }
@@ -31,9 +33,9 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items:center;
-gap: 30px;
+gap: 20px;
 // border: 1px solid black;
-height: 80vh;
+height: 100vh;
 
 `
 const Steps = styled.div`
@@ -44,13 +46,14 @@ justify-content: space-around;
 text-align: center;
 align-items: center;
 width: 75vw;
-height: 45vh;
+height: 80vh;
 border-radius: 10px;
+margin: 50px;
 // background-color: #38B6FF;
 margin: 0 10px;
 box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 > p {
-  font-size: 18px;
+  font-size: 24px;
 }
 
 
@@ -66,7 +69,6 @@ function partner() {
       <Heading>
         <h1>Do you know someone looking to sell their home?</h1>
         <p>Refer them to us and receive up to $1000! Here's how:</p>
-
       </Heading>
       <Offer>
         <Process>
@@ -89,7 +91,6 @@ function partner() {
               You get paid up to $1000 after closing!
             </p>
           </Steps>
-
         </Process>
         <h3>Contact us for more info</h3>
       </Offer>

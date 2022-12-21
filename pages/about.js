@@ -7,8 +7,6 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-// height: 60vh;
-margin-top: 20px;
 padding: 20px;
 // border: 1px solid black;
 > h2 {
@@ -18,7 +16,6 @@ padding: 20px;
 
 `
 const BioText = styled.div`
-// width: 30vw;
 display: flex;
 flex-direction: column;
 // border: 1px solid black;
@@ -39,8 +36,9 @@ align-items: center;
 }
 > p {
   font-size: 20px;
+  margin: 0 20px;
 }
-margin: 0 20px;
+margin: 20px 20px;
 `
 const HouseGrid = styled.ul`
 display: flex;
@@ -57,6 +55,7 @@ list-style: none;
   padding: 10px
   
 }
+
 
 `
 const headStyles = {
