@@ -4,21 +4,22 @@ const ContactForm = styled.form`
 display: flex;
 flex-direction: column;
 padding: 20px;
-margin: 5px;
+margin: 10px;
 margin-bottom: 30px;
 border-radius: 10px;
-background-color: #ffffff20;
+background-color: #ffffff80;
 box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 gap: 10px;
 `
 
 const FormHead = styled.h3`
-font-size: 25px;
+font-size: 22px;
+text-align: center;
 `
 
 const Finput = styled.input`
 border-radius: 3px;
-width: 75%;
+width: 60vw;
 margin: 0 auto;
 height: 4vh;
 border: 1px solid #38B6FF;
@@ -31,7 +32,6 @@ border: 1px solid #38B6FF;
 
 const Fbutton = styled.button`
 margin: 0 auto;
-width: 30vw;
 margin-top: 5px;
 width: 30%;
 background-color: #38B6FF;
@@ -44,7 +44,7 @@ const FTextArea = styled.textarea`
 border-radius: 3px;
 width: 75%;
 margin: 0 auto;
-height: 6vh;
+height: 5vh;
 border: 1px solid #38B6FF;
 ::placeholder {
   font-style: bold;
@@ -55,7 +55,7 @@ border: 1px solid #38B6FF;
 
 function Form() {
   return (
-    <ContactForm>
+    <ContactForm name="contactForm" action="/success" method="POST" data-netlify="true">
         <FormHead>Get a free, no-obligation cash offer</FormHead>
         
           <Finput type="text" id="name" name="name" placeholder="Name"></Finput>

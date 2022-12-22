@@ -1,40 +1,55 @@
 import styled from "styled-components"
 import Image from "next/image"
-import call from '../public/call.png'
+import call from '../public/telephone.png'
 import email from '../public/email.png'
 import logo from '../public/logo.png'
-
+import facebook from '../public/facebook.png'
+import gram from '../public/instagram.png'
+import Link from "next/link"
 
 const Feet = styled.footer`
-position: absolute;
 width: 100%;
-height: 10rem;
-// border-top: 1px solid #38b6ff;
+height: 11rem;
 display: flex;
-justify-content: center;
+
+justify-content: space-around;
 // border: 1px solid black;
 align-items: center;
-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+box-shadow: rgba(99, 99, 99, 0.2) 0px 0px 8px 0px;
 
 
 
 
 
 `
-const Contact = styled.ul`
+const Contact = styled.div`
 display: flex;
 flex-direction: column;
-gap: 10px;
-align-items: center;
 > div {
   display: flex;
-  list-style: none;
   gap: 10px;
+  font-size: 18px;
+}
+> ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  position: relative;
+  right: 40px;
+  margin-bottom: 3px;
 }
 // border: 1px solid black;
+padding-right: 0px;
+
 `
 const imageStyle = {
   // border: '1px solid black'
+}
+
+const linkStyle = {
+  textDecoration: 'none',
+  color: 'black'
 }
 
 function Footer() {
@@ -42,14 +57,21 @@ function Footer() {
     <Feet>
         <Image src={logo} alt='vann buys houses logo' width={150} height={150} style={imageStyle} />
         <Contact>
-          <p>Contact us:</p>
+          <ul>
+            <li>Contact us:</li>
+            <li>816-945-2250</li>
+          </ul>
           <div>
-            <Image src={call} alt='phone' width={30} height={30}/>
-            <li>816-111-1111</li>
+            <Image src={facebook} alt='facebook logo' width={35} height={35}/>
+            <Image src={gram} alt='instagram logo' width={35} height={35}/>
+            <Image src={call} alt='phone' width={35} height={35}/>
+            <Image src={email} alt='envelope' width={35} height={35} />
           </div>
           <div>
-            <Image src={email} alt='envelope' width={30} height={30} />
-            <li>vannlee@vannbuyshouses.com</li>
+            <Link style={linkStyle} href='/privacy'>Privacy Policy</Link>
+          </div>
+          <div>
+            Vann Buy's Houses, LLC
           </div>
         </Contact>
     </Feet>
