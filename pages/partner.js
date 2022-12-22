@@ -12,6 +12,7 @@ text-align: center;
 }
 > p {
   font-size: 22px;
+  font-style: italic;
   
 }
 margin: 20px;
@@ -23,9 +24,11 @@ const Offer = styled.div`
 margin: 20px;
 > p {
   text-align: center;
+  font-style: italic;
 }
 > h3 {
   text-align: center;
+  margin: 50px;
 }
 `
 const Process = styled.div`
@@ -61,16 +64,17 @@ padding: 5px;
 
 
 `
+const ImageDiv = styled.div`
+borderRadius: '10px 0 0 10px';
 
-const picStyle = {
- borderRadius: '10px 0 0 10px',
-//  padding: '15px'
-};
+`
 
-const picStyle2 = {
-  borderRadius: '0 10px 10px 0',
- //  padding: '15px'
- };
+const ImageDiv2 = styled.div`
+borderRadius: '0 10px 10px 0',
+
+`
+
+
 
 function partner() {
   return (
@@ -82,7 +86,9 @@ function partner() {
       <Offer>
         <Process>
           <Steps>
-            <Image src={sale} alt="for sale sign" width={150} height={170} style={picStyle}/>
+            <ImageDiv>
+              <Image src={sale} alt="for sale sign" width={150} height={170} />
+            </ImageDiv>
             <p>
               Refer someone looking to sell their house.
             </p>
@@ -91,11 +97,15 @@ function partner() {
           <p>
               We purchase the property.
             </p>
-            <Image src={sold} alt="for sale sign" width={150} height={170} style={picStyle2}/>
+            <ImageDiv2>
+              <Image src={sold} alt="for sale sign" width={150} height={170} />
+            </ImageDiv2>
            
           </Steps>
           <Steps>
-            <Image src={money} alt="for sale sign" width={150} height={170} style={picStyle}/>
+            <ImageDiv>
+              <Image src={money} alt="for sale sign" width={150} height={170} />
+            </ImageDiv>
             <p>
               You get paid up to $1000 after closing!
             </p>

@@ -28,13 +28,13 @@ flex-direction: column;
 > div {
   display: flex;
   gap: 10px;
-  font-size: 18px;
+  font-size: 16px;
 }
 > ul {
   list-style: none;
   display: flex;
   flex-direction: column;
-  font-size: 20px;
+  font-size: 16px;
   position: relative;
   right: 40px;
   margin-bottom: 3px;
@@ -62,10 +62,10 @@ function Footer() {
             <li>816-945-2250</li>
           </ul>
           <div>
-            <Image src={facebook} alt='facebook logo' width={35} height={35}/>
-            <Image src={gram} alt='instagram logo' width={35} height={35}/>
-            <Image src={call} alt='phone' width={35} height={35}/>
-            <Image src={email} alt='envelope' width={35} height={35} />
+            <a href="https://www.facebook.com/profile.php?id=100089139481574" target="_blank" rel="noreferrer"><Image src={facebook} alt='facebook logo' width={35} height={35}/></a>
+            <a href="https://www.instagram.com/vannbuyshouses/" target="_blank" rel="noreferrer"><Image src={gram} alt='instagram logo' width={35} height={35}/></a>
+            <a href="tel:8169452250"><Image src={call} alt='phone' width={35} height={35}/></a>
+            <a href="mailto: vann.calhoune@vannbuyshouses.com"><Image src={email} alt='envelope' width={35} height={35} /></a>
           </div>
           <div>
             <Link style={linkStyle} href='/privacy'>Privacy Policy</Link>

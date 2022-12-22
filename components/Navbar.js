@@ -31,6 +31,9 @@ const NavList = styled.ul`
       box-shadow: 0 5px 3px -3px #00000030;
 
     };
+    > li {
+
+    }
 `;
 
 
