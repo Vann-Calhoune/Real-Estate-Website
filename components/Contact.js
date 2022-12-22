@@ -19,11 +19,11 @@ padding: 5px 0px;
 function Contact() {
   return (
     <HeadBar>
-        <div>Call us today: 816-945-2250</div>
-        <Image src={facebook} alt='facebook logo' width={25} height={25}/>
-            <Image src={gram} alt='instagram logo' width={25} height={25}/>
-            <Image src={call} alt='phone' width={25} height={25}/>
-            <Image src={email} alt='envelope' width={25} height={25} />
+        <div>Contact us today: 816-945-2250</div>
+        <a href="https://www.facebook.com/profile.php?id=100089139481574" target="_blank" rel="noreferrer"><Image src={facebook} alt='facebook logo' width={25} height={25}/></a>
+        <a href="https://www.instagram.com/vannbuyshouses/" target="_blank" rel="noreferrer"><Image src={gram} alt='instagram logo' width={25} height={25}/></a>
+        <a href="tel:8169452250"><Image src={call} alt='phone' width={25} height={25}/></a>
+        <a href="mailto: vann.calhoune@vannbuyshouses.com"><Image src={email} alt='envelope' width={25} height={25} /></a>
     </HeadBar>
   )
 }

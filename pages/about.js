@@ -1,13 +1,14 @@
 import styled from "styled-components";
 import Image from "next/image";
-import headShot from "../public/linked.png"
+import headShot from "../public/headclose.png"
 
 const Bio = styled.div`
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-padding: 20px;
+padding: 10px;
+
 // border: 1px solid black;
 > h2 {
   font-size: 45px;
@@ -69,13 +70,13 @@ function about() {
     <>
       
       <Bio>
-        <h2>About Me</h2>
-        <Image  src={headShot} alt="man in suit" width={350} height={350} style={headStyles}/>
+        <h2>About Us</h2>
+        <Image  src={headShot} alt="man in suit" width={400} height={400} style={headStyles}/>
         <BioText>
           
           
           <p>
-            My name is Vann Calhoune. I'm a 26 year old real estate investor born and raised in Kansas City. I am part of a team of experienced investors. I have a degree in business administration and years of real estate experience. Raised by a single mother with 5 siblings, I learned the keys to a successful life include working hard and being kind to one another. These principles are what this company is built on. 
+            My name is Vann Calhoune. I'm a real estate investor born and raised in Kansas City. I am part of a team of experienced investors. I have a degree in business administration and years of real estate experience. Raised by a single mother with 4 siblings, I learned the keys to a successful life include working hard, being kind to one another and keeping your word. These principles are what this firm is built on. We buy houses cash in the Kansas City metro and surrounding areas. If you are looking to sell your house fast for cash, you have come to the right place!
           </p>
         </BioText>
         
