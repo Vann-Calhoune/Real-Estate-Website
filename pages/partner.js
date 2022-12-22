@@ -11,7 +11,7 @@ text-align: center;
   
 }
 > p {
-  font-size: 20px;
+  font-size: 22px;
   
 }
 margin: 20px;
@@ -34,6 +34,7 @@ flex-direction: column;
 justify-content: center;
 align-items:center;
 gap: 20px;
+margin: 50px 0;
 // border: 1px solid black;
 height: 100vh;
 
@@ -42,26 +43,34 @@ const Steps = styled.div`
 display: flex;
 flex-direction: row;
 // border: 1px solid black;
-justify-content: space-around;
+justify-content: space-between;
 text-align: center;
 align-items: center;
 width: 75vw;
-height: 80vh;
+height: 100vh;
+max-height: 170px;
+gap: 5px;
 border-radius: 10px;
-margin: 50px;
 // background-color: #38B6FF;
-margin: 0 10px;
+// margin: 0 10px;
 box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 > p {
-  font-size: 24px;
+  font-size: 20px;
 }
+padding: 5px;
 
 
 `
 
 const picStyle = {
- borderRadius: '10px'
+ borderRadius: '10px 0 0 10px',
+//  padding: '15px'
 };
+
+const picStyle2 = {
+  borderRadius: '0 10px 10px 0',
+ //  padding: '15px'
+ };
 
 function partner() {
   return (
@@ -73,7 +82,7 @@ function partner() {
       <Offer>
         <Process>
           <Steps>
-            <Image src={sale} alt="for sale sign" width={150} height={150} style={picStyle}/>
+            <Image src={sale} alt="for sale sign" width={150} height={170} style={picStyle}/>
             <p>
               Refer someone looking to sell their house.
             </p>
@@ -82,11 +91,11 @@ function partner() {
           <p>
               We purchase the property.
             </p>
-            <Image src={sold} alt="for sale sign" width={150} height={150} style={picStyle}/>
+            <Image src={sold} alt="for sale sign" width={150} height={170} style={picStyle2}/>
            
           </Steps>
           <Steps>
-            <Image src={money} alt="for sale sign" width={150} height={150} style={picStyle}/>
+            <Image src={money} alt="for sale sign" width={150} height={170} style={picStyle}/>
             <p>
               You get paid up to $1000 after closing!
             </p>

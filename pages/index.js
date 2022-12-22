@@ -24,6 +24,7 @@ const P1 = styled.p`
 text-align: center;
 font-size: 30px;
 margin: 10px 15px;
+padding-top: 10px;
 
 `
 const ContentDiv = styled.div`
@@ -62,9 +63,8 @@ justify-content: center;
 font-size: 20px;
 text-align: center;
 border-radius: 20px;
-// background-color: #38b6ff;
 background-color: #ffffff20;
-margin: 0 20px;
+margin: 5px 15px;
 box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
 
@@ -115,7 +115,9 @@ const WhyWrapper = styled.div`
 display: flex;
 `
 const picStyle = {
-  borderRadius: ' 20px 20px 0 0'
+  borderRadius: ' 20px 20px 0 0',
+  objectFit: 'cover',
+  objectPosition: "center"
 };
 
 
@@ -130,9 +132,7 @@ function index() {
           <Image
             priority
             src={kcPic}
-            layout="fill"
-            objectFit="cover"
-            objectPosition="center"
+            fill='true'
             alt="downtown kansas city"
             style={imageStyle}
           />
@@ -147,15 +147,15 @@ function index() {
           <h1 className={styles.how}>How it works</h1>
           <HowContent>
             <Step>
-              <Image src={contact} alt="woman with phone and computer" width={150} height={150} style={picStyle}/>
+              <Image src={contact} alt="woman with phone and computer" width={250} height={200} style={picStyle}/>
               <p>Contact us or submit a contact form and we will discuss your property. </p>
             </Step>
             <Step>
-              <Image src={inspect} alt="house" width={150} height={150} style={picStyle}/>
+              <Image src={inspect} alt="house" width={250} height={200} style={picStyle}/>
                 <p>We set up a time to come and take a look at your home.</p>
             </Step>
             <Step >
-              <Image src={deal} alt="handshake" width={150} height={150} style={picStyle}/>
+              <Image src={deal} alt="handshake" width={250} height={200} style={picStyle}/>
               <p>We give you a no-obligation offer and can close in 1-3 weeks.</p>
             </Step>
           </HowContent>

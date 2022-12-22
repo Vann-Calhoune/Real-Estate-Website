@@ -4,3 +4,9 @@
     font-size: 22px;
    
 }
+
+@media (min-width: 500px) {
+    .hamburger {
+        display: none;
+    }
+  }
