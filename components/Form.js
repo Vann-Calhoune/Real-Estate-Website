@@ -56,22 +56,23 @@ border: 1px solid #38B6FF;
 }
 @media (min-width: 800px) {
   width: 40vw;
-  height: 8vh
+  height: 8vh;
 }
 `
 
 function Form() {
   return (
-    <ContactForm name="contactForm" action="/success" method="POST" data-netlify="true">
+    <ContactForm name="contact" action="/success" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact" />
         <FormHead>Submit this form and we will reach out to you!</FormHead>
         
-          <Finput type="text" id="name" name="name" placeholder="Name"></Finput>
+          <Finput required="true" type="text" id="name" name="name" placeholder="Name"></Finput>
           
-          <Finput type="text" id="address" name="address" placeholder="Street Address"></Finput>
-          <Finput type="text" id="city" name="city" placeholder="City"></Finput>
-          <Finput type="text" id="state" name="state" placeholder="State"></Finput>
+          <Finput required="true" type="text" id="address" name="address" placeholder="Street Address"></Finput>
+          <Finput required="true" type="text" id="city" name="city" placeholder="City"></Finput>
+          <Finput required="true" type="text" id="state" name="state" placeholder="State"></Finput>
           
-          <Finput type="number" id="phoneNumber" name="phoneNumber" placeholder="Phone Number"></Finput>
+          <Finput required="true" type="number" id="phoneNumber" name="phoneNumber" placeholder="Phone Number"></Finput>
 
           <FTextArea type="text" id="comments" name="comments" placeholder="Why are you selling?"></FTextArea>
           
