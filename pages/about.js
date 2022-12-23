@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import styled from "styled-components";
 import Image from "next/image";
 import headShot from "../public/headclose.png"
