@@ -16,10 +16,9 @@ justify-content: space-around;
 // border: 1px solid black;
 align-items: center;
 box-shadow: rgba(99, 99, 99, 0.2) 0px 0px 8px 0px;
-
-
-
-
+@media (min-width: 800px) {
+justify-content: space-between;
+}
 
 `
 const Contact = styled.div`
@@ -28,7 +27,7 @@ flex-direction: column;
 > div {
   display: flex;
   gap: 10px;
-  font-size: 16px;
+  font-size: 14px;
 }
 > ul {
   list-style: none;
@@ -41,7 +40,18 @@ flex-direction: column;
 }
 // border: 1px solid black;
 padding-right: 0px;
+@media (min-width: 800px) {
+  
+  > div {
+    font-size: 20px;
 
+  }
+  > ul {
+    font-size: 20px;
+    flex-direction: row;
+    gap: 5px;
+  }
+}
 `
 const imageStyle = {
   // border: '1px solid black'
@@ -49,13 +59,14 @@ const imageStyle = {
 
 const linkStyle = {
   textDecoration: 'none',
-  color: 'black'
+  color: 'black',
+ 
 }
 
 function Footer() {
   return (
     <Feet>
-        <Image src={logo} alt='vann buys houses logo' width={150} height={150} style={imageStyle} />
+        <Image src={logo} alt='vann buys houses logo' width={160} height={160} style={imageStyle} />
         <Contact>
           <ul>
             <li>Contact us:</li>

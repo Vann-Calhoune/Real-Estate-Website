@@ -17,7 +17,8 @@ import repair from '../public/repair.png'
 const FirstDiv = styled.div`
 position: relative;
 width: 100vw;
-height: 105vh;
+height: 90vh;
+
 `
 
 const P1 = styled.p`
@@ -25,6 +26,9 @@ text-align: center;
 font-size: 30px;
 margin: 10px 15px;
 padding-top: 10px;
+@media (min-width: 800px) {
+  font-size: 36px;
+}
 
 `
 const ContentDiv = styled.div`
@@ -32,7 +36,7 @@ position: relative;
 display: flex;
 flex-direction: column;
 align-items: center;
-justify-content: space-around;
+justify-content: center;
 color: white;
 `
 const SecDiv = styled.div`
@@ -51,11 +55,14 @@ justify-content: center;
 `
 
 const imageStyle = {
-  opacity: .8
+  opacity: .8,
+  objectFit: 'cover',
+  objectPosition: "center"
 }
 
 const Step = styled.div`
 padding: 10px;
+width: 250px;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -66,6 +73,14 @@ border-radius: 20px;
 background-color: #ffffff20;
 margin: 5px 15px;
 box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+> div {
+  border-radius: 10px 10px 10px 10px;
+}
+@media (min-width: 800px) {
+  flex-direction: row;
+  width: 800px;
+  font-size: 24px;
+}
 
 
 `
@@ -73,6 +88,9 @@ const WhyHead = styled.h1`
 text-align: center;
 font-size: 36px;
 color: #004aad;
+@media (min-width: 800px) {
+  font-size: 46px;
+}
 `
 const WhyList = styled.ul`
 display: flex;
@@ -82,9 +100,11 @@ list-style: none;
 align-content: flex-start;
 justify-content: flex-start;
 margin: 0 10px;
+font-size: 24px;
+
 
 > p {
-  font-size: 22px;
+  font-size: 18px;
   // border: 1px solid black;
   
 }
@@ -98,14 +118,30 @@ margin: 0 10px;
   margin-left: 0;
    
 }
+@media (min-width: 800px) {
+  >p {
+    font-size: 24px;
+  }
+  > div {
+    font-size: 30px;
+  }
+}
 `
 const WhyContent = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 margin: 10px 10px;
 border-radius: 10px;
 
 `
 
 const HowWrapper = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 margin: 20px 30px;
 padding: 10px; 
 border-radius: 10px;
@@ -114,11 +150,7 @@ border-radius: 10px;
 const WhyWrapper = styled.div`
 display: flex;
 `
-const picStyle = {
-  borderRadius: ' 20px 20px 0 0',
-  objectFit: 'cover',
-  objectPosition: "center"
-};
+
 
 
 
@@ -147,15 +179,17 @@ function index() {
           <h1 className={styles.how}>How it works</h1>
           <HowContent>
             <Step>
-              <Image src={contact} alt="woman with phone and computer" width={250} height={200} style={picStyle}/>
+              <div>
+                <Image src={contact} alt="woman with phone and computer" width={250} height={200} />
+              </div>
               <p>Contact us or submit a contact form and we will discuss your property. </p>
             </Step>
             <Step>
-              <Image src={inspect} alt="house" width={250} height={200} style={picStyle}/>
+              <Image src={inspect} alt="house" width={250} height={200} />
                 <p>We set up a time to come and take a look at your home.</p>
             </Step>
             <Step >
-              <Image src={deal} alt="handshake" width={250} height={200} style={picStyle}/>
+              <Image src={deal} alt="handshake" width={250} height={200} />
               <p>We give you a no-obligation offer and can close in 1-3 weeks.</p>
             </Step>
           </HowContent>

@@ -11,9 +11,13 @@ gap: 10px;
 background-color: #38b6ff;
 width: 100vw;
 color: white;
-font-size: 18px;
+font-size: 14px;
 justify-content: center;
+align-items: center;
 padding: 5px 0px;
+@media (min-width: 800px) {
+  font-size: 20px;
+}
 
 `
 function Contact() {

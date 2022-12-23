@@ -14,6 +14,13 @@ padding: 10px;
   font-size: 45px;
   color: #004aad
 }
+@media (min-width:800px) {
+> h2 {
+  font-size: 55px;
+  margin: 20px;
+}
+}
+
 
 `
 const BioText = styled.div`
@@ -24,6 +31,12 @@ flex-direction: column;
   font-size: 20px;
 }
 margin: 0 20px;
+@media (min-width: 800px) {
+  > p {
+    font-size: 24px;
+    margin: 0 120px;
+  }
+}
 
 `
 const Mission = styled.div`
@@ -40,6 +53,16 @@ align-items: center;
   margin: 0 20px;
 }
 margin: 20px 20px;
+@media (min-width: 800px) {
+  > p {
+    font-size: 24px;
+    margin: 0 120px;
+  }
+  > h2 {
+    font-size: 50px;
+  }
+}
+margin-bottom: 40px;
 `
 const HouseGrid = styled.ul`
 display: flex;
@@ -49,6 +72,11 @@ font-size: 20px;
 text-align: center;
 // border: 1px solid black;
 list-style: none;
+@media (min-width: 800px) {
+    font-size: 24px;
+    margin: 0 120px;
+}
+
 
 > li {
   background-color: #38B6FF;
@@ -59,8 +87,21 @@ list-style: none;
 
 
 `
+const Div1 = styled.div`
+height: 350px;
+width: 350px;
+@media (min-width: 800px) {
+  height: 450px;
+  width: 450px;
+}
+// border: 1px solid black;
+
+`
+
 const headStyles = {
-  // border: ' 1px solid black',
+  maxWidth: '100%',
+  height: 'auto',
+  objectFit: 'cover'
  
   
 };
@@ -70,11 +111,11 @@ function about() {
     <>
       
       <Bio>
-        <h2>About Us</h2>
-        <Image  src={headShot} alt="man in suit" width={400} height={400} style={headStyles}/>
+        <h2>About</h2>
+        <Div1>
+          <Image  src={headShot} alt="man in suit" style={headStyles}/>
+        </Div1>
         <BioText>
-          
-          
           <p>
             My name is Vann Calhoune. I'm a real estate investor born and raised in Kansas City. I am part of a team of experienced investors. I have a degree in business administration and years of real estate experience. Raised by a single mother with 4 siblings, I learned the keys to a successful life include working hard, being kind to one another and keeping your word. These principles are what this firm is built on. We buy houses cash in the Kansas City metro and surrounding areas. If you are looking to sell your house fast for cash, you have come to the right place!
           </p>
