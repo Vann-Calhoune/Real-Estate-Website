@@ -48,9 +48,7 @@ const Header = styled.div`
  align-items: center;
  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 //  border: 1px solid black;
-> div {
-  z-index: -1
-}
+
 
 
 `
@@ -73,15 +71,19 @@ const Hamburger = styled.div`
   }
 `;
 
+const LogoDiv = styled.div`
+  z-index: -1;
+`
+
 
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   return (
   <Header>
-    <div>
+    <LogoDiv>
       <Image src={logo} alt="Vann buys houses log" height={190} width={190}  />
-    </div>
+    </LogoDiv>
     <Hamburger onClick={() => setIsOpen(!isOpen)}>
         <span />
         <span />
