@@ -15,6 +15,14 @@ text-align: center;
   font-style: italic;
   
 }
+@media (min-width: 800px) {
+  > p {
+    font-size: 26px;
+  }
+  > h1 {
+    font-size: 46px;
+  }
+}
 margin: 20px;
 margin-top: 50px;
 // border: 1px solid black;
@@ -30,47 +38,40 @@ margin: 20px;
   text-align: center;
   margin: 50px;
 }
+@media (min-width: 800px) {
+  > h3 {
+    font-size: 22px;
+  }
+}
 `
 const Process = styled.div`
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items:center;
-gap: 20px;
-margin: 50px 0;
 // border: 1px solid black;
-height: 100vh;
-
+@media (min-width: 800px) {
+  flex-direction: row;
+  gap: 30px;
+}
 `
 const Steps = styled.div`
+padding: 10px;
+width: 250px;
 display: flex;
-flex-direction: row;
-// border: 1px solid black;
-justify-content: space-between;
-text-align: center;
+flex-direction: column;
 align-items: center;
-width: 75vw;
-height: 100vh;
-max-height: 170px;
-gap: 5px;
-border-radius: 10px;
-// background-color: #38B6FF;
-// margin: 0 10px;
+justify-content: center;
+font-size: 20px;
+text-align: center;
+border-radius: 20px;
+background-color: #ffffff20;
+// margin: 5px 15px;
+margin-top: 20px;
 box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-> p {
-  font-size: 20px;
+> div {
+  border-radius: 20px;
 }
-padding: 5px;
-
-
-`
-const ImageDiv = styled.div`
-borderRadius: '10px 0 0 10px';
-
-`
-
-const ImageDiv2 = styled.div`
-borderRadius: '0 10px 10px 0',
 
 `
 
@@ -86,26 +87,25 @@ function partner() {
       <Offer>
         <Process>
           <Steps>
-            <ImageDiv>
-              <Image src={sale} alt="for sale sign" width={150} height={170} />
-            </ImageDiv>
+            <div>
+              <Image src={sale} alt="for sale sign" width={250} height={200} />
+            </div>
             <p>
               Refer someone looking to sell their house.
             </p>
           </Steps>
           <Steps>
-          <p>
+            <div>
+              <Image src={sold} alt="for sale sign" width={250} height={200} />
+            </div>
+             <p>
               We purchase the property.
             </p>
-            <ImageDiv2>
-              <Image src={sold} alt="for sale sign" width={150} height={170} />
-            </ImageDiv2>
-           
           </Steps>
           <Steps>
-            <ImageDiv>
-              <Image src={money} alt="for sale sign" width={150} height={170} />
-            </ImageDiv>
+            <div>
+              <Image src={money} alt="for sale sign" width={250} height={200} />
+            </div>
             <p>
               You get paid up to $1000 after closing!
             </p>

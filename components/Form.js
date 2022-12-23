@@ -26,7 +26,10 @@ border: 1px solid #38B6FF;
 ::placeholder {
   font-style: bold;
   font-family: roboto;
-  font-size: 18px;
+  font-size: 16px;
+}
+@media (min-width: 800px) {
+  width: 40vw;
 }
 `
 
@@ -42,21 +45,25 @@ height: 30px;
 
 const FTextArea = styled.textarea`
 border-radius: 3px;
-width: 75%;
+width: 60vw;
 margin: 0 auto;
 height: 5vh;
 border: 1px solid #38B6FF;
 ::placeholder {
   font-style: bold;
   font-family: roboto;
-  font-size: 18px;
+  font-size: 16px;
+}
+@media (min-width: 800px) {
+  width: 40vw;
+  height: 8vh
 }
 `
 
 function Form() {
   return (
     <ContactForm name="contactForm" action="/success" method="POST" data-netlify="true">
-        <FormHead>Get a free, no-obligation cash offer</FormHead>
+        <FormHead>Submit this form and we will reach out to you!</FormHead>
         
           <Finput type="text" id="name" name="name" placeholder="Name"></Finput>
           

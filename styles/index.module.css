@@ -4,3 +4,8 @@
     color: #004aad;
     
 }
+@media (min-width: 800px) {
+    .how {
+        font-size: 50px
+    }
+}

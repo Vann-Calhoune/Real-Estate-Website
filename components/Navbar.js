@@ -5,6 +5,10 @@ import styles from './Navbar.module.css';
 import logo from '../public/logo.png'
 import Image from 'next/image';
 import { useState } from 'react';
+import call from '../public/telephone.png'
+import email from '../public/email.png'
+import facebook from '../public/facebook.png'
+import gram from '../public/instagram.png'
 
 const NavList = styled.ul`
   list-style: none;
@@ -31,9 +35,6 @@ const NavList = styled.ul`
       box-shadow: 0 5px 3px -3px #00000030;
 
     };
-    > li {
-
-    }
 `;
 
 
@@ -46,6 +47,11 @@ const Header = styled.div`
  height: 9rem;
  align-items: center;
  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+//  border: 1px solid black;
+> div {
+  z-index: -1
+}
+
 
 `
 
@@ -69,12 +75,13 @@ const Hamburger = styled.div`
 
 
 
-
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   return (
   <Header>
-    <Image src={logo} alt="Vann buys houses log" height={150} width={150} />
+    <div>
+      <Image src={logo} alt="Vann buys houses log" height={190} width={190}  />
+    </div>
     <Hamburger onClick={() => setIsOpen(!isOpen)}>
         <span />
         <span />
@@ -85,7 +92,7 @@ function Navbar() {
         <Link className={styles.listItem} href="/">
         Home
         </Link>
-        </li>
+      </li>
       <li >
         <Link className={styles.listItem} href="/about">
         About
