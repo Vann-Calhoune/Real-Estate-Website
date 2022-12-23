@@ -56,7 +56,7 @@ border: 1px solid #38B6FF;
 }
 @media (min-width: 800px) {
   width: 40vw;
-  height: 8vh
+  height: 8vh;
 }
 `
 
