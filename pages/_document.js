@@ -1,5 +1,6 @@
-import Document, { DocumentContext } from 'next/document'
+import Document, { Head, DocumentContext } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
+
 
 
 
