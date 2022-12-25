@@ -159,7 +159,6 @@ display: flex;
 function index() {
   return( 
   <>
-   
       <FirstDiv>
         <SecDiv>
           <Image
