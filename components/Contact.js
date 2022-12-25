@@ -8,7 +8,7 @@ import Image from "next/image"
 const HeadBar = styled.div`
 display: flex;
 gap: 10px;
-background-color: #38b6ff;
+background-color: #004aad;
 width: 100vw;
 color: white;
 font-size: 14px;

@@ -37,7 +37,7 @@ const Fbutton = styled.button`
 margin: 0 auto;
 margin-top: 5px;
 width: 30%;
-background-color: #38B6FF;
+background-color: #004aad;;
 color: white;
 border-radius: 5px;
 height: 30px;
@@ -74,7 +74,7 @@ function Form() {
           
           <Finput required="true" type="number" id="phoneNumber" name="phoneNumber" placeholder="Phone Number"></Finput>
 
-          <FTextArea type="text" id="comments" name="comments" placeholder="Why are you selling?"></FTextArea>
+          <FTextArea type="text" id="whySell" name="whySell" placeholder="Why are you selling?"></FTextArea>
           
           <FTextArea type="text" id="comments" name="comments" placeholder="Additional comments"></FTextArea>
           <Fbutton>Submit</Fbutton>

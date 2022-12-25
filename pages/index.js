@@ -41,6 +41,7 @@ color: white;
 `
 const SecDiv = styled.div`
 // z-index: -1;
+
 `
 
 const HowContent = styled.div`

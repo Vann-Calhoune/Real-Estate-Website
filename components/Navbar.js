@@ -1,14 +1,9 @@
-import React from 'react'
 import Link from 'next/link';
 import styled from 'styled-components'
 import styles from './Navbar.module.css';
 import logo from '../public/logo.png'
 import Image from 'next/image';
 import { useState } from 'react';
-import call from '../public/telephone.png'
-import email from '../public/email.png'
-import facebook from '../public/facebook.png'
-import gram from '../public/instagram.png'
 
 const NavList = styled.ul`
   list-style: none;
