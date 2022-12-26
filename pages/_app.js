@@ -17,6 +17,7 @@ function MyApp({ Component, pageProps }) {
   <Head>
     <title>We Buy Houses Cash Kansas City! | We Want To Solve Your Real Estate Problems!</title>
     <meta name="description" content="We make the process of selling your home fast and easy. We serve Kansas City and the surrounding areas. Submit a contact form or reach out to us today."></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="canonical" href="https://www.vannbuyshouses.com/" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
