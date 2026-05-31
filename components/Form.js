@@ -102,8 +102,22 @@ transition: transform 0.2s ease, background 0.2s ease;
 `
 
 function Form() {
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+
+    await fetch("/__forms.html", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    });
+
+    window.location.href = "/success";
+  };
+
   return (
-    <ContactForm name="contact" action="/success" method="POST" data-netlify="true">
+    <ContactForm name="contact" onSubmit={handleSubmit}>
       <input type="hidden" name="form-name" value="contact" />
       <FormHead>Request a cash offer</FormHead>
       <FormIntro>Tell us about the property. We will follow up quickly with next steps.</FormIntro>
