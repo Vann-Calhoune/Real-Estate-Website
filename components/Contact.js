@@ -1,32 +1,37 @@
 import styled from "styled-components"
-import call from '../public/telephone.png'
-import email from '../public/email.png'
-import facebook from '../public/facebook.png'
-import gram from '../public/instagram.png'
-import Image from "next/image"
+import { FaEnvelope, FaFacebookF, FaInstagram, FaPhone } from "react-icons/fa6"
 
 const HeadBar = styled.div`
 display: flex;
-gap: 10px;
-width: 100vw;
-color: black;
+flex-wrap: wrap;
+gap: 10px 16px;
+width: 100%;
+color: white;
+background: var(--brand-dark);
 font-size: 14px;
 justify-content: center;
 align-items: center;
-padding: 5px 0px;
+padding: 9px 16px;
+
+a {
+  display: inline-flex;
+  align-items: center;
+  color: inherit;
+}
+
 @media (min-width: 800px) {
-  font-size: 20px;
+  font-size: 16px;
 }
 
 `
 function Contact() {
   return (
     <HeadBar>
-        <div>Contact us today: 816-945-2250</div>
-        <a href="https://www.facebook.com/profile.php?id=100089139481574" target="_blank" rel="noreferrer"><Image src={facebook} alt='facebook logo' width={25} height={25}/></a>
-        <a href="https://www.instagram.com/vannbuyshouses/" target="_blank" rel="noreferrer"><Image src={gram} alt='instagram logo' width={25} height={25}/></a>
-        <a href="tel:8169452250"><Image src={call} alt='phone' width={25} height={25}/></a>
-        <a href="mailto: vann.calhoune@vannbuyshouses.com"><Image src={email} alt='envelope' width={25} height={25} /></a>
+        <div>Contact us today: <a href="tel:9137774972">913-777-4972</a></div>
+        <a href="tel:9137774972" aria-label="Call Vann Buys Houses"><FaPhone size={20} /></a>
+        <a href="mailto:vann.calhoune@vannbuyshouses.com" aria-label="Email Vann Buys Houses"><FaEnvelope size={20} /></a>
+        <a href="https://www.instagram.com/vannbuyshouses/" target="_blank" rel="noreferrer" aria-label="Instagram"><FaInstagram size={20} /></a>
+        <a href="https://www.facebook.com/profile.php?id=100089139481574" target="_blank" rel="noreferrer" aria-label="Facebook"><FaFacebookF size={20} /></a>
     </HeadBar>
   )
 }

@@ -1,21 +1,14 @@
 import '../styles/globals.css'
 import Navbar from "../components/Navbar"
 import Footer from '../components/Footer'
-import { Poppins } from '@next/font/google'
 import Contact from '../components/Contact'
 import Head from 'next/head'
   
-
-const poppins = Poppins({ 
-  subsets: ['latin'],
-  weight: '400'
-});
-
 function MyApp({ Component, pageProps }) {
  return (
  <>
   <Head>
-    <title>We Buy Houses Cash Kansas City! | We Want To Solve Your Real Estate Problems!</title>
+    <title>Sell Your House Fast in Kansas City | Vann Buys Houses</title>
     <meta name="description" content="We make the process of selling your home fast and easy. We serve Kansas City and the surrounding areas. Submit a contact form or reach out to us today."></meta>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="canonical" href="https://www.vannbuyshouses.com/" />
@@ -28,7 +21,7 @@ function MyApp({ Component, pageProps }) {
     <meta name="theme-color" content="#ffffff"/>
    
  </Head>
- <main className={poppins.className}>
+ <main>
    <Contact />
     <Navbar />
     <Component {...pageProps} />

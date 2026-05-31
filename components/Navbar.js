@@ -1,108 +1,119 @@
 import Link from 'next/link';
-import styled from 'styled-components'
+import styled from 'styled-components';
 import styles from './Navbar.module.css';
-import logo from '../public/logo.png'
+import logo from '../public/logo.png';
 import Image from 'next/image';
 import { useState } from 'react';
 
-const NavList = styled.ul`
-  list-style: none;
-    display: flex;
-    justify-content: flex-end;
-    gap: 20px;
-    align-items: center;
-    text-decoration: none;
-    margin-right: 30px;
-    @media (max-width: 500px) {
-      position: absolute;
-      top: 173px;
-      right: 0.5px;
-      gap: 20px;
-      flex-direction: column;
-      background-color: white;
-      width: 100vw;
-      text-align: center;
-      z-index: 100;
-      margin-right: 0;
-      padding-bottom: 15px;
-      top: ${({ isOpen }) => (isOpen ? "173px" : "-200px")};
-      transition: 0.3s;
-      box-shadow: 0 5px 3px -3px #00000030;
-
-    };
-`;
-
-
-const Header = styled.div`
- display: flex;
- z-index: 10000;
- flex-direction: row;
- justify-content: space-between;
- padding: 5px;
- height: 9rem;
- align-items: center;
- box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-//  border: 1px solid black;
-
-
-
-`
-
-const Hamburger = styled.div`
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 7px;
-  margin-right: 20px;
-  span {
-    height: 4px;
-    width: 40px;
-    background: #004aad;
-    margin-bottom: 4px;
-    border-radius: 5px;
-  }
-  @media (max-width: 500px) {
-    display: flex;
-  }
+const Header = styled.header`
+  position: sticky;
+  top: 0;
+  z-index: 10000;
+  display: flex;
+  min-height: 82px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 18px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(12px);
 `;
 
 const LogoDiv = styled.div`
-  z-index: -1;
-`
+  display: flex;
+  align-items: center;
+`;
 
+const NavList = styled.ul`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 
+  @media (max-width: 640px) {
+    position: absolute;
+    top: 82px;
+    left: 16px;
+    right: 16px;
+    z-index: 100;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: white;
+    box-shadow: var(--shadow);
+    opacity: ${({ $isOpen }) => ($isOpen ? '1' : '0')};
+    pointer-events: ${({ $isOpen }) => ($isOpen ? 'auto' : 'none')};
+    transform: translateY(${({ $isOpen }) => ($isOpen ? '0' : '-12px')});
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+`;
+
+const Hamburger = styled.button`
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  padding: 8px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+
+  span {
+    width: 32px;
+    height: 3px;
+    border-radius: 5px;
+    background: var(--brand);
+  }
+
+  @media (max-width: 640px) {
+    display: flex;
+  }
+`;
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+
   return (
-  <Header>
-    <LogoDiv>
-      <Image src={logo} alt="Vann buys houses log" height={190} width={190}  />
-    </LogoDiv>
-    <Hamburger onClick={() => setIsOpen(!isOpen)}>
+    <Header>
+      <LogoDiv>
+        <Link href="/" aria-label="Vann Buys Houses home">
+          <Image src={logo} alt="Vann Buys Houses logo" height={88} width={88} priority />
+        </Link>
+      </LogoDiv>
+      <Hamburger
+        type="button"
+        aria-label="Toggle navigation"
+        aria-expanded={isOpen}
+        onClick={() => setIsOpen(!isOpen)}
+      >
         <span />
         <span />
         <span />
       </Hamburger>
-    <NavList onClick={() => setIsOpen(!isOpen)} isOpen={isOpen}>
-      <li >
-        <Link className={styles.listItem} href="/">
-        Home
-        </Link>
-      </li>
-      <li >
-        <Link className={styles.listItem} href="/about">
-        About
-        </Link>
+      <NavList onClick={() => setIsOpen(false)} $isOpen={isOpen}>
+        <li>
+          <Link className={styles.listItem} href="/">
+            Home
+          </Link>
         </li>
-        <li >
-        <Link className={styles.listItem} href="/partner">
-        Refer
-        </Link>
+        <li>
+          <Link className={styles.listItem} href="/about">
+            About
+          </Link>
         </li>
-    </NavList>
-  </Header> )
-  
+        <li>
+          <Link className={styles.listItem} href="/partner">
+            Refer
+          </Link>
+        </li>
+      </NavList>
+    </Header>
+  );
 }
 
 export default Navbar;

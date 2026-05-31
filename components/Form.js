@@ -1,85 +1,143 @@
 import styled from "styled-components";
 
 const ContactForm = styled.form`
-display: flex;
-flex-direction: column;
-padding: 20px;
-margin: 10px;
-margin-bottom: 30px;
-border-radius: 10px;
-background-color: #ffffff80;
-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-gap: 10px;
+display: grid;
+gap: 14px;
+width: min(100%, 520px);
+padding: 22px;
+border: 1px solid rgba(255, 255, 255, 0.65);
+border-radius: var(--radius);
+background: rgba(255, 255, 255, 0.95);
+box-shadow: var(--shadow);
+color: var(--ink);
+backdrop-filter: blur(8px);
 `
 
 const FormHead = styled.h3`
-font-size: 22px;
+font-size: clamp(22px, 3vw, 30px);
+line-height: 1.1;
 text-align: center;
+margin: 0;
+color: var(--brand-dark);
+`
+
+const FormIntro = styled.p`
+margin: 0 0 4px;
+text-align: center;
+color: var(--muted);
+line-height: 1.5;
+`
+
+const FieldGrid = styled.div`
+display: grid;
+gap: 12px;
+
+@media (min-width: 700px) {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+`
+
+const Field = styled.label`
+display: grid;
+gap: 6px;
+font-size: 14px;
+font-weight: 700;
+color: var(--brand-dark);
+`
+
+const InputStyles = `
+width: 100%;
+min-height: 46px;
+border: 1px solid var(--border);
+border-radius: var(--radius);
+padding: 10px 12px;
+background: #fff;
+color: var(--ink);
+outline: none;
+transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+&::placeholder {
+  color: #94a3b8;
+}
+
+&:focus {
+  border-color: var(--brand-light);
+  box-shadow: 0 0 0 4px rgba(56, 182, 255, 0.18);
+}
 `
 
 const Finput = styled.input`
-border-radius: 3px;
-width: 60vw;
-margin: 0 auto;
-height: 4vh;
-border: 1px solid #38B6FF;
-::placeholder {
-  font-style: bold;
-  font-family: roboto;
-  font-size: 16px;
-}
-@media (min-width: 800px) {
-  width: 40vw;
+${InputStyles}
+`
+
+const FTextArea = styled.textarea`
+${InputStyles}
+min-height: 90px;
+resize: vertical;
+`
+
+const FullField = styled(Field)`
+@media (min-width: 700px) {
+  grid-column: 1 / -1;
 }
 `
 
 const Fbutton = styled.button`
-margin: 0 auto;
-margin-top: 5px;
-width: 30%;
-background-color: #004aad;;
+width: 100%;
+min-height: 48px;
+border: 0;
+border-radius: var(--radius);
+background: var(--brand);
 color: white;
-border-radius: 5px;
-height: 30px;
-`
+font-weight: 800;
+cursor: pointer;
+box-shadow: 0 12px 22px rgba(0, 74, 173, 0.2);
+transition: transform 0.2s ease, background 0.2s ease;
 
-const FTextArea = styled.textarea`
-border-radius: 3px;
-width: 60vw;
-margin: 0 auto;
-height: 5vh;
-border: 1px solid #38B6FF;
-::placeholder {
-  font-style: bold;
-  font-family: roboto;
-  font-size: 16px;
-}
-@media (min-width: 800px) {
-  width: 40vw;
-  height: 8vh;
+&:hover,
+&:focus-visible {
+  background: var(--brand-dark);
+  transform: translateY(-1px);
 }
 `
 
 function Form() {
   return (
     <ContactForm name="contact" action="/success" method="POST" data-netlify="true">
-        <input type="hidden" name="form-name" value="contact" />
-        <FormHead>Submit this form and we will reach out to you!</FormHead>
-        
-          <Finput required="true" type="text" id="name" name="name" placeholder="Name"></Finput>
-          
-          <Finput required="true" type="text" id="address" name="address" placeholder="Street Address"></Finput>
-          <Finput required="true" type="text" id="city" name="city" placeholder="City"></Finput>
-          <Finput required="true" type="text" id="state" name="state" placeholder="State"></Finput>
-          
-          <Finput required="true" type="number" id="phoneNumber" name="phoneNumber" placeholder="Phone Number"></Finput>
-
-          <FTextArea type="text" id="whySell" name="whySell" placeholder="Why are you selling?"></FTextArea>
-          
-          <FTextArea type="text" id="comments" name="comments" placeholder="Additional comments"></FTextArea>
-          <Fbutton>Submit</Fbutton>
-        
-
+      <input type="hidden" name="form-name" value="contact" />
+      <FormHead>Request a cash offer</FormHead>
+      <FormIntro>Tell us about the property. We will follow up quickly with next steps.</FormIntro>
+      <FieldGrid>
+        <Field>
+          Name
+          <Finput required type="text" id="name" name="name" placeholder="Your name" />
+        </Field>
+        <Field>
+          Phone
+          <Finput required type="tel" id="phoneNumber" name="phoneNumber" placeholder="913-555-1234" />
+        </Field>
+        <FullField>
+          Street Address
+          <Finput required type="text" id="address" name="address" placeholder="123 Main St" />
+        </FullField>
+        <Field>
+          City
+          <Finput required type="text" id="city" name="city" placeholder="Kansas City" />
+        </Field>
+        <Field>
+          State
+          <Finput required type="text" id="state" name="state" placeholder="MO" />
+        </Field>
+        <FullField>
+          Why are you selling?
+          <FTextArea id="whySell" name="whySell" placeholder="Share anything helpful about your situation." />
+        </FullField>
+        <FullField>
+          Additional comments
+          <FTextArea id="comments" name="comments" placeholder="Repairs, timeline, best time to call, etc." />
+        </FullField>
+      </FieldGrid>
+      <Fbutton type="submit">Request a Cash Offer</Fbutton>
     </ContactForm>
   )
 }

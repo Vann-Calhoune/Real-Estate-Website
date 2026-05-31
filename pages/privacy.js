@@ -1,19 +1,35 @@
-/* eslint-disable react/no-unescaped-entities */
 import styled from "styled-components"
 
 const PrivacyPolicy = styled.div`
-> h1 {
-    text-align: center;
-}
-margin: 30px;
+width: min(100% - 32px, 900px);
+margin: 0 auto;
+padding: 56px 0 0;
 font-size: 18px;
+line-height: 1.7;
+color: var(--ink);
+
+> h1 {
+    margin: 0 0 24px;
+    color: var(--brand-dark);
+    text-align: center;
+    font-size: clamp(34px, 5vw, 50px);
+}
+
+> h3 {
+    margin-top: 28px;
+    color: var(--brand-dark);
+}
+
+> p {
+    color: var(--muted);
+}
 `
 
 function privacy() {
   return (
     <PrivacyPolicy>
          <h1>Privacy Policy</h1>
-      <p>At Vann Buy's Houses LLC, we are committed to protecting your privacy and personal information. This privacy policy explains how we collect, use, and share your personal information when you visit or use our website vannbuyshouses.com. By using our website, you agree to the collection, use, and sharing of your personal information as described in this privacy policy. If you do not agree with our policies and practices, do not use our website.</p>
+      <p>At Vann Buys Houses LLC, we are committed to protecting your privacy and personal information. This privacy policy explains how we collect, use, and share your personal information when you visit or use our website vannbuyshouses.com. By using our website, you agree to the collection, use, and sharing of your personal information as described in this privacy policy. If you do not agree with our policies and practices, do not use our website.</p>
       <h3>Information We Collect</h3>
       <p>We collect information from you when you fill out a form on our website, such as a contact or request form. The types of information we may collect include your name, email address, phone number, and property location or preferences. We also collect information about your usage of our website, such as the pages you visit and the actions you take. This information may be collected using cookies, web beacons, and other tracking technologies.</p> 
       <h3>Use of Your Information</h3>
@@ -30,7 +46,7 @@ We may also share anonymous or aggregated data with third parties for research o
       <h3>Changes to Our Privacy Policy</h3>
       <p>We may update our privacy policy from time to time. We will post any changes on this page and encourage you to review our privacy policy regularly.</p>
       <h3>Contact Us</h3>
-      <p>If you have any questions or concerns about our privacy policy or the collection, use, or sharing of your personal information, please contact us at 816-945-2250.</p> 
+      <p>If you have any questions or concerns about our privacy policy or the collection, use, or sharing of your personal information, please contact us at 913-777-4972.</p> 
     </PrivacyPolicy>
   )
 }

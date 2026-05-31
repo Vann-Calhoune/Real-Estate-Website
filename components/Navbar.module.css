@@ -1,20 +1,23 @@
 .listItem {
     text-decoration: none;
-    color:#004aad ;
-    font-size: 22px;
-
-   
+    color: var(--brand-dark);
+    font-size: 17px;
+    font-weight: 800;
+    display: block;
+    padding: 10px 14px;
+    border-radius: 999px;
+    transition: background 0.2s ease, color 0.2s ease;
 }
 
-@media (min-width: 500px) {
-    .hamburger {
-        display: none;
-    }
-  }
+.listItem:hover,
+.listItem:focus-visible {
+    background: var(--surface-soft);
+    color: var(--brand);
+}
 
   @media (min-width: 800px) {
     .listItem {
-        font-size: 28px;
+        font-size: 18px;
     }
 
   }

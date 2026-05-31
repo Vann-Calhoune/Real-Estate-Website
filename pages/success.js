@@ -2,17 +2,22 @@ import styled from "styled-components"
 
 const SuccessMessage = styled.div`
 text-align: center;
-height: 75vh;
+min-height: 58vh;
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-color: #004aad;
+width: min(100% - 32px, 760px);
+margin: 0 auto;
+color: var(--brand-dark);
 > h1 {
-  font-size: 40px;
+  font-size: clamp(34px, 6vw, 54px);
+  margin: 0 0 12px;
 }
 > p {
-  font-size: 24px;
+  font-size: 20px;
+  color: var(--muted);
+  margin: 0;
 }
 `
 
