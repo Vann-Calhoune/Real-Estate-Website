@@ -82,6 +82,20 @@ const FullField = styled(Field)`
 }
 `
 
+const HoneypotField = styled.label`
+position: absolute;
+left: -9999px;
+width: 1px;
+height: 1px;
+overflow: hidden;
+`
+
+const CaptchaSlot = styled.div`
+display: flex;
+justify-content: center;
+min-height: 78px;
+`
+
 const Fbutton = styled.button`
 width: 100%;
 min-height: 48px;
@@ -107,18 +121,37 @@ function Form() {
 
     const formData = new FormData(event.currentTarget);
 
-    await fetch("/__forms.html", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString(),
-    });
+    try {
+      const response = await fetch("/__forms.html", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
+      });
 
-    window.location.href = "/success";
+      if (!response.ok) {
+        throw new Error("Form submission failed");
+      }
+
+      window.location.href = "/success";
+    } catch {
+      window.alert("Sorry, your request could not be sent. Please try again or call 913-777-4972.");
+    }
   };
 
   return (
-    <ContactForm name="contact" onSubmit={handleSubmit}>
+    <ContactForm
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      data-netlify-recaptcha="true"
+      netlify-honeypot="bot-field"
+      onSubmit={handleSubmit}
+    >
       <input type="hidden" name="form-name" value="contact" />
+      <HoneypotField>
+        Do not fill this out if you are human:
+        <input type="text" name="bot-field" tabIndex="-1" autoComplete="off" />
+      </HoneypotField>
       <FormHead>Request a cash offer</FormHead>
       <FormIntro>Tell us about the property. We will follow up quickly with next steps.</FormIntro>
       <FieldGrid>
@@ -151,6 +184,7 @@ function Form() {
           <FTextArea id="comments" name="comments" placeholder="Repairs, timeline, best time to call, etc." />
         </FullField>
       </FieldGrid>
+      <CaptchaSlot data-netlify-recaptcha="true" />
       <Fbutton type="submit">Request a Cash Offer</Fbutton>
     </ContactForm>
   )
